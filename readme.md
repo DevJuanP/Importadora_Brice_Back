@@ -31,3 +31,33 @@ lo que ya está hecho:
 - el 2, ya funciona la ruta /productos/categoria 
 - agregué una ruta /productos que devuelve todos los productos
 - punto 4 ya funciona /productos/${categoria}
+
+---------------------------------
+# ⚙️ Configuración del archivo .env
+
+En la **raíz del proyecto**, crea un archivo llamado `.env` con el siguiente contenido:
+
+```
+DB_USER=JuanSQL
+DB_PASS=DevJuanP
+DB_SERVER=localhost
+DB_NAME=BRICE
+DB_PORT=1433
+SERVER_PORT=4000
+```
+
+Solo necesitas cambiar los valores de **DB_USER** y **DB_PASS** según tu propio usuario y contraseña de SQL Server.
+
+---
+
+✅ **Ejemplo personalizado:**  
+Si tu usuario es `AdminDB` y tu contraseña es `12345`, el archivo quedaría así:
+
+```
+DB_USER=AdminDB
+DB_PASS=12345
+DB_SERVER=localhost
+DB_NAME=BRICE
+DB_PORT=1433
+SERVER_PORT=4000
+```
