@@ -15,14 +15,18 @@ export const getCategory = async (req, res) => {
 export const getAllProducts = async (req, res) => {
   try {
     const pool = await getConnection();
-    const result = await pool.request().query(`select P.Precio, P.Nombre, P.Img, C.Nombre as 'Categoria' from Productos P INNER JOIN Categorias C on P.IdCategoria = C.IdCategoria`);
+    const result = await pool
+      .request()
+      .query(
+        `select P.Precio, P.Nombre, P.Img, C.Nombre as 'Categoria' from Productos P INNER JOIN Categorias C on P.IdCategoria = C.IdCategoria`
+      );
     const products = result.recordset.map(p => {
-      return{
+      return {
         precio: p.Precio,
         nombre: p.Nombre,
         img: p.Img,
-        categoria: p.Categoria
-      }
+        categoria: p.Categoria,
+      };
     })
     res.json(products);
   } catch (error) {
@@ -42,12 +46,12 @@ export const getProductsByCategory = async (req, res) => {
     const pool = await getConnection();
     const result = await pool.request().query(`select P.Precio, P.Nombre, P.Img, C.Nombre as 'Categoria' from Productos P INNER JOIN Categorias C on P.IdCategoria = C.IdCategoria WHERE C.Nombre = '${category}'`);
     const products = result.recordset.map(p => {
-      return{
+      return {
         precio: p.Precio,
         nombre: p.Nombre,
         img: p.Img,
-        categoria: p.Categoria
-      }
+        categoria: p.Categoria,
+      };
     })
     res.json(products);
   } catch (error) {
