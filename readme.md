@@ -17,6 +17,7 @@ ejemplo:
 5. ruta: /login → 
     {name, img, admin(true o false)}  <Dashboard>
 6. ruta: dashboard/report → pdf con el reporte
+7. turas: productos "para ti" 
 
 
 y LLenar la DB
@@ -31,7 +32,12 @@ lo que ya está hecho:
 - el 2, ya funciona la ruta /productos/categoria 
 - agregué una ruta /productos que devuelve todos los productos
 - punto 4 ya funciona /productos/${categoria}
-
+-------------------
+#Explicasión de rutas en funcionamiento:
+1. /banner → trae 3 links de imagenes para el banner en un array
+2. /productos → trae todos los productos 
+3. /productos/categoria → un array de las categorias de la db
+4. /productos/:categoría → un array de productos de esa categoría
 ---------------------------------
 # ⚙️ Configuración del archivo .env
 

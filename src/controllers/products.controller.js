@@ -55,3 +55,19 @@ export const getProductsByCategory = async (req, res) => {
     console.error(error);
   }
 }
+
+
+/*
+//Mejor solo cojerlo de la ruta productos/:category y limitar a 6 en el front
+export const getSixProductsByCategory = async (req, res) => {
+  const { category } = req.params;
+  if (!category) {
+    return res.status(400).json({ message: 'Category parameter is required' });
+  }
+  try {
+    
+  } catch (error) {
+    res.status(500).json({ error: error, message: error.message });
+    console.error(error);
+  }
+}*/
